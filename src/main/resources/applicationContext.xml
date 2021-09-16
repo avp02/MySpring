@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="avp.com.spring.core"/>
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+
+<!--    <bean id="classicalMusicBean"-->
+<!--          class="avp.com.spring.core.ClassicalMusic"-->
+<!--        init-method="doMyInit"-->
+<!--        destroy-method="doMyDestroy">-->
+<!--    </bean>-->
+<!--    <bean id="rockMusicBean"-->
+<!--          class="avp.com.spring.core.RockMusic"-->
+<!--          factory-method="getRockMusic">-->
+<!--    </bean>-->
+<!--    <bean id="rapMusic"-->
+<!--          class="avp.com.spring.core.RapMusic">-->
+<!--    </bean>-->
+
+<!--    <bean id="musicBean"-->
+<!--          class="avp.com.spring.core.ClassicalMusic">-->
+<!--    </bean>-->
+
+<!--    <bean id="musicPlayer"-->
+<!--    class="avp.com.spring.core.MusicPlayer">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="classicalMusicBean"/>-->
+<!--                <ref bean="rockMusicBean"/>-->
+<!--                <ref bean="rapMusic"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    <bean id="musicPlayer"-->
+<!--          class="avp.com.spring.core.MusicPlayer">-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="classicalMusicBean"/>-->
+<!--                <ref bean="rockMusicBean"/>-->
+<!--                <ref bean="rapMusic"/>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="age" value="${musicPlayer.age}"/>-->
+<!--    </bean>-->
+
+</beans>
