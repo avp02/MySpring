@@ -1,6 +1,7 @@
 package avp.com.spring.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,8 +16,10 @@ public class MusicPlayer {
     private RockMusic rockMusic;
     private RapMusic rapMusic;
 
-//    private String name;
-//    private int age;
+    @Value("${musicPlayer.name}")
+    private String name;
+    @Value("${musicPlayer.volume}")
+    private int volume;
 
     public MusicPlayer(){}
 
@@ -27,7 +30,15 @@ public class MusicPlayer {
         this.rapMusic = rapMusic;
     }
 
-//    @Autowired
+    public String getName() {
+        return name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    //    @Autowired
 //    public MusicPlayer(List<Music> musicList) {
 //        this.musicList = musicList;
 //    }

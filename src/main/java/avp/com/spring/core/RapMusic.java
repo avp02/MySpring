@@ -1,6 +1,9 @@
 package avp.com.spring.core;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,5 +30,13 @@ public class RapMusic implements Music{
     public List<String> getSong() {
 //        return addSongs().parallelStream().findAny().get();
         return songs;
+    }
+    @PostConstruct
+    private void doMyInit() { //может быть любой модификатор доступа
+        System.out.println("Doing my init method");
+    }
+    @PreDestroy
+    protected void doMyDestroy() {
+        System.out.println("Doing my destroy method");
     }
 }

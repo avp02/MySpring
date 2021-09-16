@@ -1,11 +1,13 @@
 package avp.com.spring.core;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Scope("prototype")
 public class RockMusic implements Music{
 
 //    private RockMusic() {}
