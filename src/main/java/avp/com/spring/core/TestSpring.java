@@ -11,9 +11,11 @@ public class TestSpring {
 //        Music music = context.getBean("musicBean", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusicList();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getAge());
+        musicPlayer.playMusicList(MusicGenre.RAP);
+        musicPlayer.playMusicList(MusicGenre.CLASSICAL);
+        musicPlayer.playMusicList(MusicGenre.ROCK);
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getAge());
 
         context.close();
     }

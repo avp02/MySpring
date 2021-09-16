@@ -1,6 +1,8 @@
 package avp.com.spring.core;
 
+import java.util.List;
+
 public interface Music {
 
-    String getSong();
+    List<String> getSong();
 }
