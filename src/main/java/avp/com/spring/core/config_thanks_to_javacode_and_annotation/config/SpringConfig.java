@@ -1,13 +1,12 @@
 package avp.com.spring.core.config_thanks_to_javacode_and_annotation.config;
 
-import avp.com.spring.core.config_thanks_to_javacode_and_annotation.ClassicalMusic;
-import avp.com.spring.core.config_thanks_to_javacode_and_annotation.MusicPlayer;
-import avp.com.spring.core.config_thanks_to_javacode_and_annotation.RapMusic;
-import avp.com.spring.core.config_thanks_to_javacode_and_annotation.RockMusic;
+import avp.com.spring.core.config_thanks_to_javacode_and_annotation.*;
 import org.springframework.context.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Configuration
-@ComponentScan("avp.com.spring.core.config_thanks_to_javacode_and_annotation")
 @PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
 
@@ -26,9 +25,13 @@ public class SpringConfig {
     public RapMusic rapMusic() {
         return new RapMusic();
     }
+    @Bean
+    public List<Music> musicList() {
+        return Arrays.asList(classicalMusic(), rockMusic(), rapMusic());
+    }
 
     @Bean
     public MusicPlayer musicPlayer() {
-        return new MusicPlayer(classicalMusic(), rockMusic(), rapMusic());
+        return new MusicPlayer(musicList());
     }
 }

@@ -8,9 +8,9 @@ public class TestSpring {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusicList(MusicGenre.RAP);
-        musicPlayer.playMusicList(MusicGenre.CLASSICAL);
-        musicPlayer.playMusicList(MusicGenre.ROCK);
+//        musicPlayer.playMusicList(MusicGenre.RAP);
+//        musicPlayer.playMusicList(MusicGenre.CLASSICAL);
+//        musicPlayer.playMusicList(MusicGenre.ROCK);
 
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
@@ -22,6 +22,8 @@ public class TestSpring {
         RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
         RockMusic rockMusic1 = context.getBean("rockMusic", RockMusic.class);
         System.out.println(rockMusic == rockMusic1);
+
+        musicPlayer.playMusic();
 
         context.close();
     }
