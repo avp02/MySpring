@@ -1,4 +1,4 @@
-package avp.com.spring.core;
+package avp.com.spring.core.config_thanks_to_xml_and_annotation;
 
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;

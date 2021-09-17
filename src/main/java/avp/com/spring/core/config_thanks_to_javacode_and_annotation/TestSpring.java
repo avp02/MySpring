@@ -1,15 +1,12 @@
-package avp.com.spring.core;
+package avp.com.spring.core.config_thanks_to_javacode_and_annotation;
 
+import avp.com.spring.core.config_thanks_to_javacode_and_annotation.config.SpringConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("applicationContext.xml");
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
-//        Music music = context.getBean("musicBean", Music.class);
-//        MusicPlayer musicPlayer = new MusicPlayer(music);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusicList(MusicGenre.RAP);
         musicPlayer.playMusicList(MusicGenre.CLASSICAL);
@@ -25,7 +22,6 @@ public class TestSpring {
         RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
         RockMusic rockMusic1 = context.getBean("rockMusic", RockMusic.class);
         System.out.println(rockMusic == rockMusic1);
-
 
         context.close();
     }

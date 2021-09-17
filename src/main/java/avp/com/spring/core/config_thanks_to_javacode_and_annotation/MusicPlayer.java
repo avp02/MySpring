@@ -1,14 +1,11 @@
-package avp.com.spring.core;
+package avp.com.spring.core.config_thanks_to_javacode_and_annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
 
 //    private List<Music> musicList = new ArrayList<>();
@@ -23,7 +20,6 @@ public class MusicPlayer {
 
     public MusicPlayer(){}
 
-    @Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, RapMusic rapMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;

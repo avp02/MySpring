@@ -1,4 +1,4 @@
-package avp.com.spring.core;
+package avp.com.spring.core.config_thanks_to_xml_and_annotation;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -7,31 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@Scope("prototype")
-public class RockMusic implements Music{
-
-//    private RockMusic() {}
-
-//    public static RockMusic getRockMusic() {
-//        return new RockMusic();
-//    }
+@Scope("singleton")
+public class ClassicalMusic implements Music{
     private List<String> songs = new ArrayList<>();
 
     {
-        songs.add("Wind cries Mari");
-        songs.add("SecondRock");
-        songs.add("ThirdRock");
+        songs.add("Hungary rhapsody");
+        songs.add("classic music");
+        songs.add("bethovin's music");
     }
+
 //    private List<String> addSongs() {
 //        List<String> songs = new ArrayList<>();
-//        songs.add("Wind cries Mari");
-//        songs.add("SecondRock");
-//        songs.add("ThirdRock");
+//        songs.add("Hungary rhapsody");
+//        songs.add("classic music");
+//        songs.add("bethovin's music");
 //        return songs;
 //    }
+
     @Override
     public List<String> getSong() {
-
 //        return addSongs().parallelStream().findAny().get();
         return songs;
     }
